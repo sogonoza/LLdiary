@@ -1,13 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Language Learner Diary</title>
-</head>
-<body>
-    <header></header>
-    <main></main>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script defer type="module" src="/src/js/controller.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Language Learner Diary</h1>
+      <button class="header__button">New Diary</button>
+    </header>
+    <main>
+      <div class="latest">
+        <h2 class="latest__title">Latest Diaries</h2>
+        <div class="latest__contents">
+          <ul class="latest__contents--lists latest__contents--lists--1">
+            <li class="latest__contents--lists--item">
+              <a href="#" class="latest__contents--lists--item--link">
+                <p class="latest__contents--lists--item--date">11/10/2023</p>
+                <p class="latest__contents--lists--item--title">
+                  Fucking Owner
+                </p>
+                <p class="latest__contents--lists--item--excerpt">
+                  My wife and I started working at a hotel in a small town in
+                  Australia 2 months ago. We are experiencing working abroad for
+                  the first time.....(look more)
+                </p>
+                <p class="latest__contents--lists--item--vocab">
+                  <span><img src="/src/img/text.svg" alt="" /></span>
+
+                  New Words:
+                  <span>3</span>
+                </p>
+              </a>
+            </li>
+            <li class="latest__contents--lists--item">
+              <a href="#" class="latest__contents--lists--item--link">
+                <p class="latest__contents--lists--item--date">10/10/2023</p>
+                <p class="latest__contents--lists--item--title">Hard Workers</p>
+                <p class="latest__contents--lists--item--excerpt">
+                  When I started working in this town, I was surprised by hard
+                  workers around me. Including women, elderly, everyone works
+                  hard.....(look more)
+                </p>
+                <p class="latest__contents--lists--item--vocab">
+                  <span><img src="/src/img/text.svg" alt="" /></span>
+                  New Words:
+                  <span>2</span>
+                </p>
+              </a>
+            </li>
+            <li class="latest__contents--lists--item">
+              <a href="#" class="latest__contents--lists--item--link">
+                <p class="latest__contents--lists--item--date">09/10/2023</p>
+                <p class="latest__contents--lists--item--title">
+                  Missing Japanese Food
+                </p>
+                <p class="latest__contents--lists--item--excerpt">
+                  6 months has past since we left Japan last time. What I hust
+                  want to say is I'm missing Japanese food......(look more)
+                </p>
+                <p class="latest__contents--lists--item--vocab">
+                  <span><img src="/src/img/text.svg" alt="" /></span>
+                  New Words:
+                  <span>4</span>
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="latest__contents--pagination">
+          <button
+            class="latest__contents--pagination--btn latest__cotents--pagination--btn--prev"
+          >
+            Prev
+          </button>
+          <button
+            class="latest__contents--pagination--btn latest__cotents--pagination--btn--1"
+          >
+            1
+          </button>
+          <button
+            class="latest__contents--pagination--btn latest__cotents--pagination--btn--2"
+          >
+            2
+          </button>
+          <button
+            class="latest__contents--pagination--btn latest__cotents--pagination--btn--3"
+          >
+            3
+          </button>
+          <button
+            class="latest__contents--pagination--btn latest__cotents--pagination--btn--Next"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="modal active">
+        <div class="modal__content">
+          <div class="modal__content--container">
+            <button class="modal__content--container--close"></button>
+            <p class="modal__date">11/10/2023</p>
+            <h2 class="modal__title">sample title</h2>
+            <h3 class="modal__sentences--title">ORIGINAL DIARY</h3>
+            <p class="modal__sentences--text">
+              6 months has past since we left Japan last time. What I hust want
+              to say is I'm missing Japanese food. Sample 6 months has past
+              since we left Japan last time. What I just want to say is I'm
+              missing Japanese food.
+            </p>
+            <h3 class="modal__fixed--title">FIXED DIARY</h3>
+            <p class="modal__fixed--text">
+              6 months has past since we left Japan last time. What I hust want
+              to say is I'm missing Japanese food.6 months has past since we
+              left Japan last time. What I just want to say is I'm missing
+              Japanese food.
+            </p>
+            <ul class="modal__vocab">
+              <h3 class="modal__vocab--title">NEW WORDS</h3>
+              <li class="modal__vocab--item">
+                <div class="modal__vocab--item--word">
+                  <p class="modal__vocab--item--word--text">literally</p>
+                  <p class="modal__vocab--item--word--type">(adverb)</p>
+                </div>
+                <p class="modal__vocab--item--meaning">
+                  &rarr; used to emphasize what you are saying
+                </p>
+                <div class="modal__vocab--item--example">
+                  <h4 class="modal__vocab--item--example--title">
+                    EXAMPLE SENTENCES
+                  </h4>
+                  <ul>
+                    <li>He missed that kick literally by miles.</li>
+                    <li>I was literally bowled over by the news.</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="modal__vocab--item">
+                <div class="modal__vocab--item--word">
+                  <p class="modal__vocab--item--word--text">literally</p>
+                  <p class="modal__vocab--item--word--type">(adverb)</p>
+                </div>
+                <p class="modal__vocab--item--meaning">
+                  &rarr; used to emphasize what you are saying
+                </p>
+                <div class="modal__vocab--item--example">
+                  <h4 class="modal__vocab--item--example--title">
+                    EXAMPLE SENTENCES
+                  </h4>
+                  <ul>
+                    <li>He missed that kick literally by miles.</li>
+                    <li>I was literally bowled over by the news.</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <h3 class="modal__notes--title">NOTES</h3>
+            <p class="modal__notes--text">
+              6 months has past since we left Japan last time. What I just want
+              to say is I'm missing Japanese food.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer></footer>
-</body>
+  </body>
 </html>

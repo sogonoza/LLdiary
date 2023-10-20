@@ -1,0 +1,276 @@
+// COLOR
+$color-text: #070707;
+$color-text2: #5c5656;
+$color-white: #fff;
+$color-main: #2329d6;
+
+// MIXIN
+@mixin modalItemMarginLeft {
+  margin-left: 1.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: $color-text;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+// STYLE
+.header {
+  padding: 2rem 3rem 1rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 2.5rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $color-main;
+    background-color: $color-white;
+    border: 0.2rem solid $color-main;
+    border-radius: 3rem;
+    box-shadow: 0.1rem 0.1rem 0.2rem $color-text;
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+main {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 10rem;
+
+  .latest {
+    &__title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    &__contents {
+      display: flex;
+
+      &--lists {
+        &--item {
+          margin-bottom: 7rem;
+
+          &--link {
+            display: grid;
+            grid-template:
+              "date title vocab" auto
+              "excerpt excerpt excerpt" auto / 20rem 1fr 20rem;
+            row-gap: 1rem;
+            align-items: center;
+
+            text-decoration: none;
+            color: $color-text2;
+
+            // grid-template-columns: min-content 1fr min-content;
+            // grid-template-rows: repeat(2, 1fr);
+            // grid-template-areas: "date title vocab" "excerpt vocab";
+          }
+
+          &--date {
+            grid-area: date;
+            font-weight: 600;
+          }
+
+          &--title {
+            grid-area: title;
+            font-weight: 600;
+          }
+
+          &--excerpt {
+            grid-area: excerpt;
+          }
+
+          &--vocab {
+            grid-area: vocab;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.2rem;
+
+            span {
+              display: flex;
+
+              img {
+                height: 3rem;
+                margin-right: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      &--pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+
+        &--btn {
+          background-color: transparent;
+          border: none;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 80%;
+      overflow-y: scroll;
+      margin: 0 auto;
+      background-color: $color-white;
+      padding: 1.5rem 2rem 4rem;
+
+      &--container {
+        position: relative;
+
+        &--close {
+          position: absolute;
+          right: 0;
+          top: -1rem;
+          width: 3rem;
+          height: 3rem;
+          background: none;
+          border: none;
+          opacity: 0.3;
+          transition: opacity 0.3s;
+
+          &:hover {
+            opacity: 1;
+          }
+
+          &::before,
+          &::after {
+            position: absolute;
+            left: 1.5rem;
+            content: " ";
+            height: 3rem;
+            width: 0.2rem;
+            background-color: #333;
+          }
+
+          &::before {
+            transform: rotate(45deg);
+          }
+          &::after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    &__date {
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 5rem;
+      font-weight: 600;
+      background-image: linear-gradient(to left, #553c9a, #b393d3);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    &__sentences {
+      &--text {
+        @include modalItemMarginLeft;
+      }
+    }
+
+    &__fixed {
+      &--text {
+        @include modalItemMarginLeft;
+      }
+    }
+
+    &__vocab {
+      &--item {
+        @include modalItemMarginLeft;
+        margin-bottom: 2rem;
+
+        &--example {
+          ul {
+            @include modalItemMarginLeft;
+          }
+
+          &--title {
+            font-size: 1.4rem;
+            text-decoration: underline;
+          }
+        }
+
+        &--word {
+          display: flex;
+          gap: 0.6rem;
+
+          &--text {
+            font-weight: 600;
+          }
+        }
+
+        &--meaning {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    h3 {
+      padding-left: 0.8rem;
+      border-left: 0.4rem solid $color-main;
+      margin: 2rem 0 1rem;
+    }
+  }
+
+  .modal.active {
+    display: block;
+  }
+}
