@@ -33,7 +33,6 @@ body {
   color: $color-text;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 
 // STYLE
@@ -76,8 +75,6 @@ main {
     }
 
     &__contents {
-      display: flex;
-
       &--lists {
         &--item {
           margin-bottom: 7rem;
@@ -201,6 +198,76 @@ main {
           &::after {
             transform: rotate(-45deg);
           }
+        }
+
+        &--form {
+          padding: 0 6rem;
+
+          input,
+          textarea,
+          select {
+            margin-bottom: 2rem;
+          }
+
+          label {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+          }
+
+          input[type="text"],
+          textarea {
+            background-color: rgba(202, 202, 202, 0.4);
+            border: none;
+            border-radius: 0.4rem;
+            font-size: 1.5rem;
+            padding: 1rem;
+            width: 100%;
+          }
+
+          &--more {
+            text-align: center;
+            margin-bottom: 3rem;
+
+            button {
+              border: none;
+              background: none;
+            }
+          }
+
+          &--submit {
+            text-align: center;
+
+            input[type="submit"] {
+              background-color: $color-main;
+              color: $color-white;
+              font-size: 2rem;
+              padding: 1rem 8rem;
+              border-radius: 3rem;
+              font-weight: 600;
+              box-shadow: 0.1rem 0.1rem 0.1rem $color-text;
+              border: none;
+            }
+          }
+
+          hr {
+            border: none;
+            border-top: 0.2rem dotted $color-text2;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      &--addNew {
+        &--title {
+          text-align: center;
+          font-size: 5rem;
+          font-weight: 600;
+          background-image: linear-gradient(to left, #553c9a, #b393d3);
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          line-height: 1.2;
+          margin-bottom: 2rem;
         }
       }
     }
